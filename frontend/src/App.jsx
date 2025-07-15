@@ -6,7 +6,7 @@ function App() {
 
   const [message, setMessage] = useState([]);
 
-  useEffect( () => {
+  useEffect(() => {
       axios.get('/api/message')
       .then( (response) => {
         setMessage(response.data);
@@ -14,7 +14,7 @@ function App() {
       .catch( (error) => {
         console.log(error)
       })
-  })
+  },[]);
 
   return (
     <>
